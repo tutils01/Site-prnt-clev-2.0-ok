@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastrar-se</title>
+    <style>
+        .input-large {
+            width: 100%; /* Ajusta a largura para 100% do contêiner */
+            padding: 10px; /* Adiciona um pouco de preenchimento */
+            margin-bottom: 15px; /* Espaçamento entre os campos */
+            border: 1px solid #ccc; /* Borda leve */
+            border-radius: 4px; /* Bordas arredondadas */
+        }
+    </style>
+</head>
+<body>
+    
+    <header>
+        <h1>PsicoConexão</h1>
+        <nav>
+            <ul>
+                <li><a href="atedimentoonline.html">Atendimento Online</a></li>
+                <li><a href="atendimentopresencial.html">Atendimento Presencial</a></li>
+                <li><a href="umpoucosobrenos.html">Um Pouco Sobre Nós</a></li>
+                <li><a href="cadastrar.html">Cadastrar-se</a></li>
+                <li><a href="fazerlogin.html">Fazer Login</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <div style="float: left">
+        <img src="https://loremflickr.com/320/240" />
+    </div>
+
+    <div class="login-container"> <!-- Alterado para manter o tema -->
+        <h2>Cadastrar-se</h2>
+        <form id="registerForm">
+            <label for="username">Usuário:</label>
+            <input type="text" id="username" name="username" class="input-large" required>
+
+            <label for="email">E-mail:</label>
+            <input type="email" id="email" name="email" class="input-large" required>
+
+            <label for="password">Senha:</label>
+            <input type="password" id="password" name="password" class="input-large" required>
+
+            <label for="confirm-password">Confirmar Senha:</label>
+            <input type="password" id="confirm-password" name="confirm-password" class="input-large" required>
+
+            <button type="submit">Cadastrar</button>
+        </form>
+        <p id="message"></p>
+    </div>
+
+    <script>
+        document.getElementById('registerForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const username = document.getElementById('username').value;
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            const confirmPassword = document.getElementById('confirm-password').value;
+
+            // Validação básica
+            if (password !== confirmPassword) {
+                document.getElementById('message').textContent = 'As senhas não coincidem.';
+                document.getElementById('message').style.color = 'red';
+            } else {
+                // Simulação de cadastro
+                document.getElementById('message').textContent = 'Cadastro realizado com sucesso!';
+                document.getElementById('message').style.color = 'green';
+                // Redirecionar ou executar outra ação aqui
+            }
+        });
+    </script>
+</body>
+</html>
